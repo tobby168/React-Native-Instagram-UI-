@@ -78,7 +78,8 @@ export default class Story extends Component {
         {this.state.items.map((item,index)=>
           <TouchableOpacity key={index} onPress={this.handleOnPress.bind(this, index)} style={styles.storyBtn}>
             <View>
-              <Image style={styles.btnImgOuter} source={(!item.read)?require('../img/story_btnouter_act.png'):require('../img/story_btnouter_inact.png')}/>
+              <Image style={styles.btnImgOuter} 
+                source={(!item.read)?require('../img/story_btnouter_act.png'):require('../img/story_btnouter_inact.png')}/>
               <Image style={styles.btnImg} source={{uri: item.img_url}}/>
             </View>
             <Text style={styles.btnText}>{(item.id.length>8)?item.id.substring(0,8)+'...':item.id}</Text>
